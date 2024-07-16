@@ -41,6 +41,7 @@ const Signup = () => {
 
     const onSubmitUserRegister = async (e) => {
         e.preventDefault()
+        console.log(userRegisterInfo);
         if (userRegisterInfo.user_firstname.length < 3) {
             return alert("Name should contains atleast 3 character");
         }
@@ -56,7 +57,7 @@ const Signup = () => {
         try {
             const response = await fetch(apiUrl, method);
             const data = await response.json();
-            console.log(data);
+            console.log(data)
             alert(`${data.msg} with id:${data.registeredID}`);
 
         }catch(err) {
