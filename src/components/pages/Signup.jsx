@@ -58,7 +58,7 @@ const Signup = () => {
             const response = await fetch(apiUrl, method);
             const data = await response.json();
             console.log(data)
-            alert(`${data.msg} with id:${data.registeredID}`);
+            alert("user Registered Successfully");
 
         }catch(err) {
             alert("Internal server Error");
