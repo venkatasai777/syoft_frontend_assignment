@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { MdRemoveRedEye } from "react-icons/md";
 import '../../App.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
-
+    const navigate = useNavigate()
     const apiUrl = 'https://syoft.dev/Api/user_registeration/api/user_registeration'
     const [showPassword, setShowPassword] = useState(false)
     const [userRegisterInfo, setuserRegisterInfo] = useState({
@@ -59,9 +59,9 @@ const Signup = () => {
             const data = await response.json();
             console.log(data)
             alert("user Registered Successfully");
-
+            return navigate('/')
         }catch(err) {
-            alert("Internal server Error");
+            return alert("Internal server Error");
         }
     }
 
